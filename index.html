@@ -8,20 +8,23 @@
   </head>
   <body>
   <section class="section">
-    <div class="container">
-      <h1 class="title">
+    <div class="container is-dark">
+      <h1 class="title has-text-centered">
         Weather Dashboard <p id="city" ></p>
       </h1>
       
         <div class="columns ">
             <div class="column">
-              <input type="text" id="debounce"></input>
-              <button onclick=getWeather()>Search</button>
+              <input type="text" class="input" id="debounce"></input>
+              <button class="button" onclick=getWeather()>Search</button>
+
+              <br>
+              <h3>Recent Searches: <p id="left"></p></h3>>
             </div>
             <div id="current" class="column">
-              <h2>Today</h2>
+              <h2 class="title">Today</h2>
               
-              <p id="date"></p>
+              <p id="date" class="subtitle"></p>
               <p id="image"></p>
               <p id="temperature"></p>
               <p id="humidity"></p>
@@ -31,29 +34,50 @@
             </div>
 
             <div id="future" class="column">
-              <h2>Future</h2>
-              
-              <p id="future_date"></p>
-              <p id="future_image"></p>
-              <p id="future_temperature"></p>
-              <p id="future_humidity"></p>
-              <p id="future_windSpeed"></p>
-              <p id="future_uvIndex"></p>
-              <p id="future_conditionality"></p>
+              <h2 class="title">5 Day Forcast</h2>
+              <p class="subtitle" id="1future_date"></p>
+              <p id="1future_image"></p>
+              <p id="1future_temperature"></p>
+              <p id="1future_humidity"></p>
+              <p id="1future_windSpeed"></p>
+              <p id="1future_uvIndex"></p>
+              <p id="1future_conditionality"></p>
+              <br>
+              <p id="2future_date"></p>
+              <p id="2future_image"></p>
+              <p id="2future_temperature"></p>
+              <p id="2future_humidity"></p>
+              <p id="2future_windSpeed"></p>
+              <p id="2future_uvIndex"></p>
+              <p id="2future_conditionality"></p>
+              <br>
+              <p id="3future_date"></p>
+              <p id="3future_image"></p>
+              <p id="3future_temperature"></p>
+              <p id="3future_humidity"></p>
+              <p id="3future_windSpeed"></p>
+              <p id="3future_uvIndex"></p>
+              <p id="3future_conditionality"></p>
+              <br>
+              <p id="4future_date"></p>
+              <p id="4future_image"></p>
+              <p id="4future_temperature"></p>
+              <p id="4future_humidity"></p>
+              <p id="4future_windSpeed"></p>
+              <p id="4future_uvIndex"></p>
+              <p id="4future_conditionality"></p>
+              <br>
+              <p id="5future_date"></p>
+              <p id="5future_image"></p>
+              <p id="5future_temperature"></p>
+              <p id="5future_humidity"></p>
+              <p id="5future_windSpeed"></p>
+              <p id="5future_uvIndex"></p>
+              <p id="5future_conditionality"></p>
+              <br>
             </div>
           </div>
-          <div class="columns ">
-            <div class="column">
-              <p>Recent Searches</p>
-            </div>
-            <div class="column">
-              
-            </div>
 
-            <div class="column">
-              
-            </div>
-          </div>
     </div>
   </section>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

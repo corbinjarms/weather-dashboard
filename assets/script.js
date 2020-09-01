@@ -1,32 +1,3 @@
-//Use the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. The documentation includes a section called "How to start" that will provide basic setup and usage instructions.
-
-//Use `localStorage` to store any persistent data.
-
-/*GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-*/
-
-//WHEN I view current weather conditions for that city
-//THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-
-/*WHEN I view the UV index
-THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
-WHEN I open the weather dashboard
-THEN I am presented with the last searched city forecast*/
-
-
-//Search best practices
-///Did you mean x? with a modal
-/// =>
-//jquery ui for autocomplete
-
-
-
 /*var button = document.getElementById("debounce"); 
 
 const debounce = (func, delay) => { 
@@ -89,6 +60,8 @@ m = m.getMonth() + 1
 function getWeather () {
     
     city = document.getElementById("debounce").value
+    localStorage.setItem('recent',city)
+    document.getElementById("left").textContent = localStorage.getItem('recent')
     let endpoint = 'https://api.openweathermap.org/data/2.5/weather?q='+city+'&appid=bc0a72d78bf72a19475c2903d0f8d050'
     $.ajax({
         url: endpoint,
@@ -126,17 +99,66 @@ function getWeather () {
                 console.log(response)
 
                 //display date
-                document.getElementById("future_date").textContent = m + "/"+ d;
+                document.getElementById("1future_date").textContent = "Tomorrow";
                 //display weather image
-                document.getElementById("future_image").textContent = "Image: ";
+                document.getElementById("1future_image").textContent = "Image: ";
                 //display temperature
-                document.getElementById("future_temperature").textContent = "Temperature: " + response.daily[1].temp.day ;
+                document.getElementById("1future_temperature").textContent = "Temperature: " + response.daily[1].temp.day ;
                 //display humidity
-                document.getElementById("future_humidity").textContent = "Humidity: " + response.current.humidity ;
+                document.getElementById("1future_humidity").textContent = "Humidity: " + response.daily[1].humidity;
                 //display wind speed
-                document.getElementById("future_windSpeed").textContent = "Wind Speed: " + response.current.wind_speed;
+                document.getElementById("1future_windSpeed").textContent = "Wind Speed: " + response.daily[1].wind_speed;
                 //display UV Index
-                document.getElementById("future_uvIndex").textContent = "UV Index: " + response.current.uvi;
+                document.getElementById("1future_uvIndex").textContent = "UV Index: " + response.daily[1].uvi;
+
+                //display date
+                document.getElementById("2future_date").textContent = "Day 2";
+                //display weather image
+                document.getElementById("2future_image").textContent = "Image: ";
+                //display temperature
+                document.getElementById("2future_temperature").textContent = "Temperature: " + response.daily[2].temp.day ;
+                //display humidity
+                document.getElementById("2future_humidity").textContent = "Humidity: " + response.daily[2].humidity;
+                //display wind speed
+                document.getElementById("2future_windSpeed").textContent = "Wind Speed: " + response.daily[2].wind_speed;
+                //display UV Index
+                document.getElementById("2future_uvIndex").textContent = "UV Index: " + response.daily[2].uvi;
+                //display date
+                document.getElementById("3future_date").textContent = "Day 3";
+                //display weather image
+                document.getElementById("3future_image").textContent = "Image: ";
+                //display temperature
+                document.getElementById("3future_temperature").textContent = "Temperature: " + response.daily[3].temp.day ;
+                //display humidity
+                document.getElementById("3future_humidity").textContent = "Humidity: " + response.daily[3].humidity;
+                //display wind speed
+                document.getElementById("3future_windSpeed").textContent = "Wind Speed: " + response.daily[3].wind_speed;
+                //display UV Index
+                document.getElementById("3future_uvIndex").textContent = "UV Index: " + response.daily[3].uvi;
+
+                document.getElementById("4future_date").textContent = "Day 4";
+                //display weather image
+                document.getElementById("4future_image").textContent = "Image: ";
+                //display temperature
+                document.getElementById("4future_temperature").textContent = "Temperature: " + response.daily[4].temp.day ;
+                //display humidity
+                document.getElementById("4future_humidity").textContent = "Humidity: " + response.daily[4].humidity;
+                //display wind speed
+                document.getElementById("4future_windSpeed").textContent = "Wind Speed: " + response.daily[4].wind_speed;
+                //display UV Index
+                document.getElementById("4future_uvIndex").textContent = "UV Index: " + response.daily[4].uvi;
+
+                document.getElementById("5future_date").textContent = "Day 5";
+                //display weather image
+                document.getElementById("5future_image").textContent = "Image: ";
+                //display temperature
+                document.getElementById("5future_temperature").textContent = "Temperature: " + response.daily[5].temp.day ;
+                //display humidity
+                document.getElementById("5future_humidity").textContent = "Humidity: " + response.daily[5].humidity;
+                //display wind speed
+                document.getElementById("5future_windSpeed").textContent = "Wind Speed: " + response.daily[5].wind_speed;
+                //display UV Index
+                document.getElementById("5future_uvIndex").textContent = "UV Index: " + response.daily[5].uvi;
             });
         return coord
     }
